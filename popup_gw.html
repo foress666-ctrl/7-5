@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="individual.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+
+    .modal-hero {
+    background-image: url("img2/poster/poster2.png"); 
+    }
+    
+    @media (max-width: 767px) {
+        .modal-hero {
+            background-image: url("img2/poster/re-d.png");
+        }
+    }
+    </style>
+
+</head>
+<body>
+    
+        <header class="modal-header padding-left padding-right">
+            <button class="back-btn" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i> 돌아가기
+            </button>
+        </header>
+
+        <section class="modal-hero padding-left padding-right">
+        </section>
+
+        <section class="stillcuts-section padding-left padding-right padding-top paddig-bottom box-sizing">
+            <div>
+                <h1 class="movie-title2 text-lg">REAL STEEL</h1>
+                <p class="gray-font personal-margin">나 자신에 대한 ‘믿음’만 있다면 무엇이든 이뤄낼 수 있다.</p>
+             </div>
+            <div class="stillcuts-grid">
+                <div class="stillcut-item border-radius"><img class="width"  src="steel/real1.png" alt="스틸컷 1"></div>
+                <div class="stillcut-item border-radius"><img class="width" src="steel/real2.png" alt="스틸컷 2"></div>
+                <div class="stillcut-item border-radius"><img class="width" src="steel/real3.png" alt="스틸컷 3"></div>
+                <div class="stillcut-item border-radius"><img class="width" src="steel/real4.png" alt="스틸컷 4"></div>
+            </div>
+        </section>
+
+        <section class="movie-info-section width">
+            <p class="gray-font personal-margin text-xs">숀 레비 · 2001.06.13 · 26년</p>
+            
+            <p class="movie-synopsis text-xs  width">
+                어릴 적 그는 조용하고 하라는 거 하는 순종적인 아이였다.
+학장시절에는 그저 공부만 열심히 했다. 그런 그가 처음으로 하고 싶은 것이 생겼는데 ‘헤어디자이너’였다. 
+하지만, 쉽지 않았다. 욕을 먹지 않는 날이 없었다.
+그렇게 고군분투하다 미용을 그만두게 되고 정신으로 많이 힘들었다.
+사람들이 무서워졌고 다시 일어날 수 없었는데 
+좋은 인생 선생님을 만나 정신이 건강해졌고 다시 사람들을 만나러 ‘밖으로’ 나간다.
+그렇게 넘어지다가 다시 일어나 이번에는 ‘그래픽 디자인’이라는 길을 걷고 있다. 
+            </p>
+            
+            <p class="gray-font personal-margin text-xs">임근우</p>
+            
+            <div class="tags-and-score">
+                <span class="tag text-xs">시원함</span>
+                <span class="tag text-xs">진중함</span>
+                <span class="tag text-xs">능청함</span>
+            </div>
+        </section>
+
+        <div class="button-rayout">
+            <button class="ticket-btn border-radius" onclick="location.href='popup2.html'">
+                예매하기
+            </button>   
+        </div>
+
+
+</body>
+</html>

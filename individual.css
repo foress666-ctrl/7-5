@@ -1,0 +1,1367 @@
+/* 전체 영역 */
+.booking-modal-overlay {
+    width: 100%;
+
+}
+
+.booking-modal-content {
+    width: 100%;
+    max-width: 1200px;
+   
+   
+}
+
+/* 돌아가기 버튼 */
+.booking-header {
+    margin-bottom: 32px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 날짜 영역 */
+.date-picker-section {
+    margin-bottom: 48px;
+}
+
+.date-scroll-container {
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+
+}
+
+.date-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+
+.date-item {
+    width: 72px;
+    height: 110px;
+    background: #141414;
+    flex-shrink: 0;
+    text-align: center;
+    padding-top: 20px;
+    cursor: pointer;
+    padding-bottom: 20px; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.date-item strong {
+    display: block;
+    font-size: 24px;
+    color: white;
+    margin: 4px 0;
+}
+
+.day {
+    font-size: 12px;
+    color: #888;
+}
+
+.date-item.active {
+    background: white;
+}
+
+.date-item.active span,
+.date-item.active strong,
+.date-item.active .day {
+    color: black;
+}
+
+/* 메인 */
+
+.booking-main-layout {
+    display: flex;                 
+    justify-content: space-between; 
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* ==========================================================================
+좌석 선택 영역
+   ========================================================================== */
+.seat-selection-area {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.screen-indicator {
+    width: 100%;
+    margin-bottom: 48px;
+}
+
+.screen-line {
+    width: 90%;
+    height: 30px;            /* 💡 곡선이 그려질 최소한의 세로 공간 확보 */
+    position: relative;
+    overflow: hidden;        /* 상자 밖으로 나가는 거대한 원의 아랫부분을 잘라냅니다 */
+}
+
+/* 💡 ::after 가상 요소로 일정한 두께의 진짜 곡선 바를 만듭니다 */
+.screen-line::after {
+    content: "";
+    position: absolute;
+    
+    /* 1. 내 모니터 화면보다 훨씬 거대한 원을 바닥에 깔아둡니다 */
+    width: 200%;             
+    height: 800px;           
+    
+    /* 2. 원을 중앙 정렬하고 위로 바짝 올립니다 */
+    left: 55%;
+    transform: translateX(-50%);
+    top: 0;                  /* 💡 곡률 조절 장치: 더 휘게 하고 싶으면 이 값을 5px, 10px 식으로 조금씩 내려보세요! */
+
+    /* 3. 둥근 원의 탑(Top) 테두리선만 활성화해서 일정한 두께를 만듭니다 */
+    border-top: 4px solid #444; /* 스크린의 일정한 두께 (여기서 두께 조절 가능) */
+    border-radius: 50%;         /* 완벽한 동그라미로 만들어 왜곡 없는 깔끔한 곡선 구현 */
+}
+
+
+
+
+
+.seat-grid{
+    width:80%;
+    max-width:700px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:40px;
+}
+
+    .member-icon{
+        width:60px; 
+        height:60px;
+        object-fit:cover;
+        border-radius:12px;
+        display:block;
+        }
+
+.side{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.center{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:20px;
+}
+
+.seat{
+    width:60px;
+    height:60px;
+    border-radius:12px;
+    background:#4d4944;
+}
+
+.seat-icon{
+    width:60px;
+    height:60px;
+    background:#fff;
+    border-radius:50%;
+}
+
+/* ==========================================================================
+   📋 [오른쪽] 정보 요약 영역
+   ========================================================================== */
+.booking-summary-area {
+    width: 36%;
+    background: #000000;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.summary-header h2 {
+    margin-bottom: 4px;
+  }
+
+.summary-date {
+    margin-bottom: 16px;
+}
+
+.info-block {
+    margin-bottom: 8px;
+}
+
+.info-label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.info-value {
+    font-size: 20px;
+    
+}
+
+/* 상영 시간 선택 버튼 */
+.time-slots {
+    display: flex;
+    gap: 12px;
+}
+
+.time-btn {
+    width: 80px;
+    height: 48px;
+    background: #141416;
+    border: none;
+    
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.time-btn.active {
+    background: white;
+    color: black;
+}
+
+/* 금액 결제 영역 */
+.price-block {
+    border-top: 1px solid #141414;
+    padding-top: 24px;
+    margin-top: 16px;
+}
+
+.price-value {
+    font-size: 36px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* 하단 최종 제출 버튼 */
+.final-submit-btn {
+    width: 100%;
+    height: 56px;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+.final-submit-btn:hover {
+    background: #222;
+    color: white;
+}
+
+
+-------------------------------------개인 페이지-----------------------------------
+
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: auto;
+}
+
+.modal-content {
+    width: 100%;
+    background: black;
+    position: relative;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column; /* 💡 자식들을 위에서 아래로 정렬 */
+}
+
+.modal-header {
+    position: absolute;  /* 💡 화면 최상단을 기준으로 공중에 띄웁니다 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    z-index: 10;        /* 💡 이미지보다 무조건 앞으로 오게 정렬 */
+    padding-top: 30px;
+    padding-bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+     /* 버튼 뒤에 어두운 그라데이션을 깔아 글씨 가독성 확보 */
+}
+
+.modal-hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* 그라디언트 높이 조절 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    pointer-events: none;
+}
+
+.hero-img-mobile  { display: none; }
+.hero-img-desktop { display: block; }
+
+.back-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    margin-left: 20px;
+}
+
+.back-btn:hover {
+    opacity: 0.7;
+}
+
+
+.modal-hero {
+  width: 100%;
+    height: 700px;
+    display: block;
+    position: relative;
+
+    
+    background-origin: content-box;
+    background-clip: content-box;    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.modal-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* 이미지를 영역에 꽉 채움 */
+    border-radius: 0;     /* 보더 제거 */
+    display: block;       /* 하단 여백 제거 */
+}
+
+.movie-title2 {
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+
+
+.modal-banner-content {
+    width: 500px;
+}
+
+.bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: black;
+}
+
+.stillcuts-section {
+    
+    padding-bottom: 40px;
+}
+
+.stillcuts-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px; /* ← 간격 추가 */
+    display: flex;
+    justify-content: space-between;
+    gap: 8px; /* ← 간격 추가 */
+}
+
+.stillcut-item {
+    width: 24%;
+    aspect-ratio: 16 / 9; /* ← 비율 고정 */
+    height: auto;          /* ← 고정 높이 제거 */
+    background: #111;
+    overflow: hidden;
+}
+
+.stillcut-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* ← 비율 유지하며 꽉 채움 */
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.stillcut-item img:hover {
+    opacity: 1;
+}
+
+.personal-margin{
+    margin-bottom: 24px;
+}
+
+
+.movie-info-section {
+    padding: 40px 80px;
+    width: 900px;
+}
+
+.movie-synopsis {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+    color: #ddd;
+}
+
+
+.tags-and-score {
+    display: flex;
+    align-items: center;
+}
+
+.tag {
+    border: 1px solid #333;
+    padding: 4px 12px;
+    border-radius: 16px;
+    margin-right: 12px;
+    font-size: 12px;
+    color: #888;
+}
+
+.score-badge {
+    font-size: 20px;
+}
+
+
+---------------------------------메인 페이지----------------------------------
+---------------------------------메인 페이지----------------------------------
+---------------------------------메인 페이지----------------------------------
+
+header {
+    background-color: #000000; 
+    
+}
+
+.header_text_left{
+    padding-top: 30px;
+}
+
+.side-card {
+  display: none;
+}
+
+.main_top_poster {
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 24px;
+}
+
+
+
+.main_banner {
+      width: 88%;
+    height: 640px;
+    background-size: cover;
+    border-radius: 40px;
+    display: flex;
+    align-items: flex-end;
+    padding: 56px;
+    box-sizing: border-box;
+}
+
+.banner_text {
+    width: 500px;
+}
+
+.movie-title {
+    font-size: 56px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.movie-desc {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
+.rating {
+    font-size: 20px;
+}
+
+.rating .score {
+    font-size: 16px;
+    color: #999;
+}
+
+.banner_right_top{
+    position: absolute;
+    right: 120px;
+    top: 40px;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 252px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.arrow-btn:hover {
+    opacity: 0.7;
+}
+
+.left-arrow {
+    left: 20px;
+}
+
+.right-arrow {
+    right: 20px;
+}
+
+.view-more-btn {
+    width: 180px;
+    height: 44px;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-more-btn:hover {
+    background: #333;
+}
+
+.reviews_section {
+    display: flex;
+    justify-content: center; 
+}
+
+.reviews_section::before,
+.reviews_section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.reviews_section::before {
+  top: 0;
+  background: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+.reviews_section::after {
+  bottom: 0;
+  background: linear-gradient(to top, black 0%, transparent 100%);
+}
+
+.reviews_container {
+    width: 100%;
+    max-width: 1000px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.reviews_left {
+    width: 400px;
+}
+
+.reviews_left h2 {
+    
+    margin: 16px 0;
+}
+
+.section_desc {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.project_list {
+    list-style: none;
+}
+
+.project_list li {
+    padding: 16px;
+    background: rgba(34, 34, 34, 0.7);
+    margin-bottom: 12px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.project_list li:hover {
+    background-color: rgba(51, 51, 51, 0.7);
+}
+
+.reviews_right {
+    width: 448px;
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews_section {
+    margin-top: -1px;
+}
+
+.review_card {
+    background: rgba(26, 26, 26, 0.7);
+    padding: 20px;
+
+    margin-bottom: 16px;
+}
+
+.reviewauthor {
+    color: #888;
+    font-size: 12px;
+}
+
+.products_section {
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 48px;
+}
+
+.products_grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product_item {
+    width: 220px;
+    background: #050505;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product_img_box {
+    width: 180px;
+    height: 252px;
+    margin-bottom: 20px;
+}
+
+.product_img_box img {
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+.product_img_box img:hover {
+    transform: scale(1.05);  
+}
+
+.prod_movie_name {
+    font-size: 12px;
+    color: #777;
+}
+
+.prod_name {
+    font-size: 16px;
+    margin: 12px 0;
+}
+
+.price {
+    color: #ccc;
+}
+
+.footer_section {
+     width: 100%;
+}
+
+.team-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.member {
+    width: 220px;
+}
+
+.member h4 {
+    margin-bottom: 12px;
+}
+
+.role {
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.email {
+    color: #666;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.sns-icons i {
+    margin-right: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sns-icons i:hover {
+    color: white;
+}
+
+.footer_end_text {
+    height: 4px;
+    background: #111;
+    margin: 40px 0;
+    border: none;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+   
+ }
+
+.aa {
+    background-color: white;
+}
+
+
+.footer_member_introduce {
+    width: 100%;
+    height: 452px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    
+}
+
+.footer_member_introduce_title {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 48px;
+}
+
+.footer_member_introduce_title2{
+    
+    font-weight: 700;
+    letter-spacing: -4px;
+    color: #666;
+}
+
+/* 클래스 중복 선언 분리 보정 */
+.footer_member_introduce_title_sub {
+    font-size: 16px;
+    margin-top: 12px;
+    color: #ffffff;
+}
+
+.footer_member_introduce_box {
+    width: 18%;
+    height: auto;
+    min-width: 240px;
+    max-width: 280px;
+    border: 1px solid #9b9b9b;
+    background: #9b9b9b;
+    padding: 16px;
+    position: absolute;
+    z-index: 2;
+
+}
+
+.footer_member_introduce_box h3 {
+    font-weight: 800;
+    color: #111;
+}
+
+.footer_member_introduce_box p {
+   
+    line-height: 1.5;
+    color: #555;
+}
+
+.footer_member_introduce_box1 {
+    left: 20%;
+    top: 36%;
+
+    transform: translateX(-50%);
+    
+}
+
+.footer_member_introduce_box2 {
+    left: 40%;
+    top: 66%;
+
+    transform: translateX(-50%);
+}
+
+.footer_member_introduce_box3 {
+    left: 60%;
+    top: 36%;
+  
+    transform: translateX(-50%);
+}
+
+.footer_member_introduce_box4 {
+    left: 80%;
+    top: 66%;
+
+    transform: translateX(-50%);
+}
+
+.profile_row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.profile_row a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.profile_row i {
+    font-size: 20px;
+    color: #111;
+    margin-top: 8px;
+}
+
+.profile_row i:hover {
+    color: #333;  /* ← 더 진한 색으로 */
+    transition: color 0.3s ease;
+}
+
+/* ── Hero ── */
+.hero-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 24px;
+  overflow: hidden;
+}
+
+.hero-stage {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 640px;
+}
+
+.hero-card-wrap {
+  width: 72%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.hero-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 32px;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: transform, opacity;
+}
+
+.hero-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-card-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 48px 48px 40px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.hero-stars { margin-top: 8px; }
+
+.side-card {
+  width: 11%;
+  height: 78%;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1),
+              filter 0.4s ease,
+              box-shadow 0.4s ease;
+  filter: brightness(0.45) saturate(0.7);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.side-left {
+  transform: translateX(18px) scale(0.93) perspective(500px) rotateY(12deg);
+}
+.side-right {
+  transform: translateX(-18px) scale(0.93) perspective(500px) rotateY(-12deg);
+}
+
+.side-card:hover {
+  filter: brightness(0.7) saturate(0.9);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.7);
+}
+.side-left:hover {
+  transform: translateX(24px) scale(0.97) perspective(500px) rotateY(8deg);
+}
+.side-right:hover {
+  transform: translateX(-24px) scale(0.97) perspective(500px) rotateY(-8deg);
+}
+
+.button-rayout { 
+    margin-top: 20px; 
+    margin-bottom: 120px; 
+}
+
+
+.ticket-btn {
+    background-color: #181818; 
+    border: none;
+    color: white;
+}
+
+
+.hero-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  margin-bottom: 24px;
+}
+
+.hero-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #44444484;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.hero-dot.active {
+  background: #ffffff63;
+  transform: scale(1.3);
+}
+
+.reviews_section {
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews_bg_video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.reviews_bg_video.active {
+  opacity: 1;
+}
+
+.reviews_overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  opacity: 0.8; 
+}
+
+.reviews_container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+@media(max-width: 767px) {
+
+    .hero-stage { height: 400px; }
+    .hero-card-wrap { width: 76%; }
+    .side-card { width: 10%; height: 72%; border-radius: 12px; }
+    .hero-card-info { padding: 24px 20px; }
+
+    .header_text_left {
+        padding: 30px;
+    }
+
+
+    .date-item strong {
+        font-size: 24px;
+    }
+
+    
+   .main_top_poster {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    }
+
+
+    .modal-hero {
+        background-image: url("poster1.png");
+        background-origin: content-box;  /* ← 모바일도 동일하게 */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-clip: content-box;
+    }
+
+    .reviews_container {
+        flex-direction: column;
+        gap: 30px;
+   
+    }
+
+
+
+
+ 
+
+
+
+    .project_list {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 0;
+        
+    }
+
+
+
+
+    .project_list li {
+        width: 23%;
+        height: 70px;
+        border-radius: 8px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 33px 33px; 
+        padding: 0; 
+        transform: none;
+    }
+
+
+
+
+ .project_list li strong,
+    .project_list li span {
+        display: none ;
+    }
+
+
+
+
+    
+        li:nth-child(1) { background-image: url("img2/Member Icon/Geunwoo-w.png")
+    }
+        li:nth-child(2) { background-image: url("img2/Member Icon/sunwoo-w.png");
+    }
+
+
+
+
+        li:nth-child(3) { background-image: url("img2/Member Icon//Donggeun-w.png")
+    }
+
+
+
+
+        li:nth-child(4) { background-image: url("img2/Member Icon/yewon-w.png");
+    }
+
+
+
+
+    .products_grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px 10px;
+    }
+
+
+
+
+    .product_item, .product-item {
+        width: calc(50% - 5px);
+        max-width: none;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+
+
+
+    .product_img_box {
+        height: 160px;
+        margin-bottom: 15px;
+    }
+    
+    .footer_member_introduce {
+        height: auto;
+      
+    }
+
+
+
+
+    .footer_member_introduce_title {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .footer_member_introduce_title2{
+        font-size: 36px;
+    }
+
+
+
+
+   .footer_member_introduce_box {
+    position: relative;
+    width: calc(100% - 40px);
+    height: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto 15px;
+    transform: none;
+}
+
+
+    .arrow-btn {
+        display: none !important;
+    }
+
+
+
+
+
+
+    .footer_section {
+        box-sizing: border-box !important;
+    }
+
+
+
+
+    .main_banner {
+        width: 100%; 
+        background: url("la-d.png") no-repeat center/cover;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        box-sizing: border-box;
+        padding: 0 20px 60px 20px; 
+    }
+
+
+
+
+
+
+
+
+
+
+    .stillcuts-section::-webkit-scrollbar {
+        display: none; 
+    }
+
+
+
+
+
+    .stillcut-item {
+
+    width: 24%;
+    aspect-ratio: 3 / 2 !important;  /* ← 세로 이미지면 2:3, 가로면 16:9로 맞게 조절 */
+    height: auto;
+   
+    overflow: hidden;
+
+    }
+
+
+
+
+    .stillcut-item img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+
+
+    .booking-modal-overlay {
+        padding: 40px 20px;
+    }
+
+
+
+
+    .booking-modal-content {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+
+
+
+    .date-picker-section {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+
+
+    .date-picker-section::-webkit-scrollbar {
+        display: none;
+    }
+
+
+
+
+    .date-scroll-container {
+        display: inline-flex;
+        gap: 12px;
+        width: auto;
+       padding-bottom: 5px;
+    }
+
+
+
+
+    .date-item {
+        display: inline-block;
+        flex-shrink: 0;
+        width: 72px;
+        background: #141414;
+        text-align: center;
+        cursor: pointer;
+    }
+
+
+
+
+    .booking-main-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .seat{
+        width: 25px;
+        height: 25px;
+        border-radius: 4px;
+    }
+
+    .seat-icon{
+        width: 35px;
+        height: 35px;
+    }
+
+ 
+
+    .side{
+        gap: 10px;
+    }
+
+   .center{
+        gap: 10px;
+    }
+    .seat-grid{
+        gap: 20px;
+    }
+
+
+
+    .member-icon{
+    width:25px;
+    height:25px;
+    border-radius:4px;
+    }
+
+
+    .booking-summary-area {
+        max-width: 600px;
+        float: none;
+        margin: 0 auto;
+        
+        border-top: 1px solid #222;
+    }
+
+
+
+
+
+
+    
+
+   .movie-info-section {
+        max-width: 100% !important;
+        padding: 20px !important;
+    }
+
+
+    
+
+
+    .movie-title,
+    .movie-title2,
+    .movie-synopsis,
+    .review_text
+    .reviews_right {
+        white-space: normal !important; 
+        word-wrap: keep-all !important; 
+        white-space: normal;
+        word-break: keep-all;
+    }
+}
+

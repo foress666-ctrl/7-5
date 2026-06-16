@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예매 팝업 창</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="individual.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<div class="booking-modal-overlay padding-left padding-right padding-top padding-bottom width box-sizing">
+    <div class="booking-modal-content margin width">
+        
+        <div class="booking-header">
+            <button class="back-btn" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i> 돌아가기
+            </button>
+        </div>
+
+        <section class="date-picker-section padding-bottom width">
+            <div class="date-scroll-container">
+                <div class="date-item gray-font border-radius"><span class="text-xs">6월</span><strong>16</strong><span class="day text-xs">화</span></div>
+                <div class="date-item gray-font border-radius"><span class="text-xs">6월</span><strong>17</strong><span class="day text-xs">수</span></div>
+                <div class="date-item active border-radius"><span class="text-xs">6월</span><strong>18</strong><span class="day text-xs">목</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>19</strong><span class="day text-xs">금</span></div>
+                <div class="date-item gray-font border-radius"><span class="text-xs">6월</span><strong>20</strong><span class="day text-xs">토</span></div>
+                <div class="date-item gray-font border-radius"><span class="text-xs">6월</span><strong>21</strong><span class="day text-xs">일</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>22</strong><span class="day text-xs">월</span></div>
+                <div class="date-item gray-font border-radius"><span class="text-xs">6월</span><strong>23</strong><span class="day text-xs">화</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>24</strong><span class="day text-xs">수</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>25</strong><span class="day text-xs">목</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>26</strong><span class="day text-xs">금</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>27</strong><span class="day text-xs">토</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>28</strong><span class="day text-xs">일</span></div>
+                 <div class="date-item gray-font border-radius"><span class="text-xs">6월</span><strong>25</strong><span class="day text-xs">목</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>26</strong><span class="day text-xs">금</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>27</strong><span class="day text-xs">토</span></div>
+                <div class="date-item gray-font border-radius"><span class="text-xs">6월</span><strong>28</strong><span class="day text-xs">일</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>25</strong><span class="day text-xs">목</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>26</strong><span class="day text-xs">금</span></div>
+                <div class="date-item gray-font border-radius"><span class="text-xs">6월</span><strong>27</strong><span class="day text-xs">토</span></div>
+                <div class="date-item gray-font border-radius"><span class="text-xs">6월</span><strong>28</strong><span class="day text-xs">일</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>27</strong><span class="day text-xs">토</span></div>
+                <div class="date-item gray-font border-radius "><span class="text-xs">6월</span><strong>28</strong><span class="day text-xs">일</span></div>
+            </div>
+            </div>
+        </section>
+
+        <div class="booking-main-layout width">
+            
+            <section class="seat-selection-area width">
+                <div class="screen-indicator">
+                    <div class="screen-line margi"></div>
+                    <h3 class="gray-font">screen</h3>
+                </div>
+                
+                <div class="seat-grid margin width">
+                    <div class="side left"></div>   
+
+                     <div class="center"></div>
+
+                    <div class="side right"></div>
+                        
+
+                </div>
+
+            </section>
+
+            <section class="booking-summary-area padding-top width">
+                <div class="summary-header">
+                    <h2>Presentation Day</h2>
+                    <p class="summary-date gray-font text-xs">2026.06.18 (목)</p>
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label gray-font text-xs">상영관</span>
+                    <p class="info-value text-xs">계원예대 702A강의실</p>
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label gray-font text-xs">상영 시간</span>
+                    <div class="time-slots">
+                        <button class="time-btn gray-font border-radius">09:00</button>
+                        <button class="time-btn gray-font border-radius">10:00</button>
+                        <button class="time-btn gray-font border-radius">11:00</button>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label gray-font text-xs">좌석</span>
+                    <p class="info-value text-xs">C열 2, 3, 4, 5번</p>
+                </div>
+
+                <div class="info-block">
+                    <span class="info-label gray-font text-xs">인원</span>
+                    <p class="info-value text-xs">일반 4명</p>
+                </div>
+
+                <div class="price-block">
+                    <span class="price-label text-xs">총 금액</span>
+                    <span class="price-value text-xs">40,000원</span>
+                </div>
+
+                <button class="final-submit-btn ticket-btn border-radius">예매하기</button>
+            </section>
+            
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+document.querySelectorAll('.date-item').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelectorAll('.date-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+    });
+});
+document.querySelectorAll('.time-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+const left = document.querySelector('.left');
+const center = document.querySelector('.center');
+const right = document.querySelector('.right');
+
+// 왼쪽 14석
+for(let i=0; i<14; i++){
+    left.innerHTML += '<div class="seat"></div>';
+}
+
+const members = [
+    "img2/Member Icon/Donggeun-w.png",
+    "img2/Member Icon/Geunwoo-w.png",
+    "img2/Member Icon/sunwoo-w.png",
+    "img2/Member Icon/yewon-w.png"
+];
+
+let memberIndex = 0;
+
+// 가운데 42칸
+for(let i=0; i<42; i++){
+
+    if(i >= 19 && i <= 22){
+        center.innerHTML += `
+            <img src="${members[memberIndex]}"
+                 class="member-icon">
+        `;
+        memberIndex++;
+    } else{
+        center.innerHTML += '<div class="seat"></div>';
+      }
+}
+
+// 오른쪽 14석
+for(let i=0; i<14; i++){
+    right.innerHTML += '<div class="seat"></div>';
+}
+
+
+</script>
+
+</body>
+</html>

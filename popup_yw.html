@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="individual.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+
+    .modal-hero {
+    background-image: url("img2/poster/poster1.png"); 
+    }
+    
+    @media (max-width: 767px) {
+        .modal-hero {
+            background-image: url("img2/poster/la-d.png");
+        }
+    }
+    </style>
+</head>
+<body>
+    
+        <header class="modal-header padding-left padding-right">
+            <button class="back-btn" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i> 돌아가기
+            </button>
+        </header>
+
+        <section class="modal-hero padding-left padding-right">
+        </section>
+
+        <section class="stillcuts-section padding-left padding-right padding-top">
+            <div>
+                <h1 class="movie-title2 text-lg">LA LA LAND</h1>
+                <p class="gray-font personal-margin text-xs">새로운 경험을 통해 성장하는 이야기</p>
+             </div>
+            <div class="stillcuts-grid">
+                <div class="stillcut-item border-radius"><img src="steel/lala1.png" alt="스틸컷 1"></div>
+                <div class="stillcut-item border-radius"><img src="steel/lala2.png" alt="스틸컷 2"></div>
+                <div class="stillcut-item border-radius"><img src="steel/lala3.png" alt="스틸컷 3"></div>
+                <div class="stillcut-item border-radius"><img src="steel/lala4.png" alt="스틸컷 4"></div>
+            </div>
+        </section>
+
+        <section class="movie-info-section">
+            <p class="gray-font personal-margin">데이미언 셔젤 · 2004.11.28 · 24년</p>
+            
+            <p class="movie-synopsis">
+                3남매 중 첫째로 태어나 평범한 중학교 생활을 보내던 그녀는, 자연스럽게 디자인에 끌리기 시작했다. 결국 디자인을 배우기 위해 디자인과가 있는 고등학교에 입학했고, 남들보다 이르게 사회에 나와 일을 시작했다.
+
+반복되는 일상 속에서도 그녀는 틈이 생길 때마다 여행을 떠났다.
+일본, 발리, 상하이, 태국.
+각 나라의 문화와 음식, 거리의 분위기를 경험하며 그녀의 시선은 점점 더 자유롭고 넓어졌다.
+
+그 여행들은 단순한 휴식이 아니었다.
+세상에는 다양한 삶의 방식과 아름다움이 존재한다는 것을 배우는 시간이었다.
+
+그리고 자신만의 시선으로 세상을 바라보는 사람이 되어가고 있었다.
+            </p>
+            
+            <p class="gray-font personal-margin">김예원</p>
+            
+            <div class="tags-and-score">
+                <span class="tag">자유로움</span>
+                <span class="tag">내향인</span>
+                <span class="tag">관찰력</span>
+            </div>
+        </section>
+
+        <div class="button-rayout">
+            <button class="ticket-btn border-radius" onclick="location.href='popup2.html'">
+                예매하기
+            </button>   
+        </div>
+
+
+</body>
+</html>

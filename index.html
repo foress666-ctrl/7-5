@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoviePick</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="individual.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+   .main_banner {
+        background-image: url("img2/poster/poster1.png");
+    }
+    @media (max-width: 767px) {
+        .main_banner {
+            background-image: url("img2/poster/la-d.png");
+        }
+    }
+    </style>
+</head>
+<body>
+
+ <header>
+    
+     <div class="header_text_left padding-left">🎬 MOVIE PICK</div>
+        
+ </header>
+  
+ <div class="hero-section" id="heroSection">
+    <div class="hero-dots" id="heroDots"></div>
+  <div class="hero-stage" id="heroStage">
+
+
+
+    <div class="hero-card-wrap" id="heroCardWrap">
+      <div class="hero-card" id="mainCard">
+        <div class="hero-card-bg" id="mainCardBg"></div>
+        <div class="hero-card-info">
+          <h1 class="movie_title1 text-sm" id="mainTitle"></h1>
+          <p class="movie_desc text-xs" id="mainDesc"></p>
+          <div class="hero-stars">
+            <span id="mainStars" class="text-xs"></span>
+            <span class="score text-xs" id="mainScore"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+  <div class="button-rayout">
+    <button class="ticket-btn border-radius" id="detailBtn">자세히 보기</button>
+  </div>
+
+ 
+</div>
+
+</div>
+
+
+    <section class="reviews_section padding-left padding-right padding-top padding-bottom" id="reviewsSection">
+
+  <!-- 배경 영상 -->
+  <video class="reviews_bg_video" id="reviewsBgVideo" autoplay muted loop playsinline>
+    <source id="reviewsBgSource" src="img2/video/lalaland.mp4" type="video/mp4">
+  </video>
+
+  <!-- 어두운 오버레이 -->
+  <div class="reviews_overlay"></div>
+
+  <div class="reviews_container width">
+    <div class="reviews_left width">
+      <span class="sub_title text-xs">REVIEWS</span>
+      <h2 class="text-sm">What our<br>viewers say</h2>
+      <p class="section_desc text-xs">팀원들이 남긴 솔직한 리뷰</p>
+
+      <ul class="project_list">
+        <li class="active border-radius" onclick="showReview(0)"><span class="text-xs">La La Land</span><span>3개의 리뷰</span></li>
+        <li class="active border-radius" onclick="showReview(1)"><span class="text-xs">Real Steel</span><span>3개의 리뷰</span></li>
+        <li class="active border-radius" onclick="showReview(2)"><span class="text-xs">Pirates of the Caribbean</span><span>3개의 리뷰</span></li>
+        <li class="active border-radius" onclick="showReview(3)"><span class="text-xs">1,000,000yen Girl</span><span>3개의 리뷰</span></li>
+      </ul>
+    </div>
+
+    <div class="reviews_right width" id="reviewsRight">
+      <div class="review_card border-radius">
+        <p class="review_text text-xs  width" id="review1"></p>
+        <span class="review_author text-xs" id="author1"></span>
+      </div>
+      <div class="review_card border-radius">
+        <p class="review_text text-xs width" id="review2"></p>
+        <span class="review_author text-xs" id="author2"></span>
+      </div>
+      <div class="review_card border-radius">
+        <p class="review_text text-xs width" id="review3"></p>
+        <span class="review_author text-xs" id="author3"></span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+    <section class="products_section padding-top padding-bottom padding-left padding-right box">
+        <h2 class="section-title text-sm">Collab product</h2>
+        <div class="products_grid">
+            <div class="product_item">
+                <div class="product_img_box width">
+                    <img src="img2/collaboration/lala.png" alt="영화 필름롤">
+                </div>
+                <span class="prod_movie_name">LA LA LAND</span>
+                <h3 class="prod_name text-xs">영화 필름롤</h3>
+                <p class="price text-xs">12,000원</p>
+            </div>
+            <div class="product-item">
+                <div class="product_img_box width">
+                    <img src="img2/collaboration/kr.png" alt="스즈코 스틸컷 키링">
+                </div>
+                <span class="prod_movie_name">One Million Yen Girl</span>
+                <h3 class="prod_name text-xs">스즈코 스틸컷 키링</h3>
+                <p class="price text-xs">18,000원</p>
+            </div>
+            <div class="product_item">
+                <div class="product_img_box width">
+                    <img src="img2/collaboration/ca.png" alt="해적용 팝콘">
+                </div>
+                <span class="prod_movie_name">Pirates of the Caribbean</span>
+                <h3 class="prod_name text-xs">해적용 팝콘</h3>
+                <p class="price text-xs">18,000원</p>
+            </div>
+            <div class="product_item">
+                <div class="product_img_box width">
+                    <img src="img2/collaboration/re.png" alt="리얼스틸 텀블러">
+                </div>
+                <span class="prod_movie_name text-xs">REAL STEEL</span>
+                <h3 class="prod_name text-xs">Real Steel 텀블러</h3>
+                <p class="price text-xs">14,000원</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer_section padding-top padding-bottom padding-left padding-right">
+        <div class="footer_member_introduce">
+
+   
+    <div class="footer_member_introduce_title">
+
+        <h1 class="footer_member_introduce_title2 text-lg">Digital Programming</h1>
+
+        <span class="text-xs">© 2026</span>
+
+    </div>
+
+    <!-- 카드 1 -->
+<div class="zz">
+    <div class="footer_member_introduce_box footer_member_introduce_box1 border-radius">
+
+        <h3 class="text-xs">김예원</h3>
+
+        <p class="text-xs">
+            단발의 권위자<br>
+            moyah1128@gmail.com<br>
+        </p>
+        <div class="profile_row">
+    <i class="fab fa-github"></i> <i class="fab fa-linkedin"></i>
+    <a href="https://www.instagram.com/moyah.W" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+</div>
+
+    </div>
+
+    <!-- 카드 2 -->
+
+    <div class="footer_member_introduce_box footer_member_introduce_box2 border-radius">
+
+        <h3 class="text-xs">임근우</h3>
+
+        <p class="text-xs">
+            똑부러지는 앵무새<br>
+            foress66@gmail.com<br>
+        </p>
+<div class="profile_row">
+    <i class="fab fa-github"></i> <i class="fab fa-linkedin"></i>
+    <a href="https://www.instagram.com/imgeunu13/" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+</div>
+        </div>
+
+    </div>
+
+    <!-- 카드 3 -->
+
+    <div class="footer_member_introduce_box footer_member_introduce_box3 border-radius">
+
+        <h3 class="text-xs">여선우</h3>
+
+        <p class="text-xs">
+            기린<br>
+            ssunday10am@gmail.com<br>
+        </p>
+
+        <div class="profile_row">
+    <i class="fab fa-github"></i> <i class="fab fa-linkedin"></i>
+    <a href="https://www.instagram.com/ssun3i4" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+</div>
+
+    </div>
+
+    <!-- 카드 4 -->
+
+    <div class="footer_member_introduce_box footer_member_introduce_box4 border-radius">
+
+        <h3 class="text-xs">오동근</h3>
+
+        <p class="text-xs">
+            그림, 코딩, 오버워치의 전설<br>
+            dongguen1123@gmail.com<br>
+        </p>
+                <div class="profile_row">
+            <i class="fab fa-github"></i> <i class="fab fa-linkedin"></i> 
+                <a href="https://www.instagram.com/d_root._.5" target="_blank">
+            <i class="fab fa-instagram"></i>
+                </a>
+   
+   
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+
+        <p class="copyright text-xs">© 2026 MoviePick. All rights reserved. Made with 💜 by our amazing team.</p>
+</div>
+</footer>
+
+<script>
+
+const REVIEWS = [
+  {
+    video: "video/6800228-uhd_4096_2160_25fps.mp4", 
+    reviews: [
+      { text: "의견 제시나 피그마 사용에서 많은 도움을 받았고 노션 사용에서도 노션 안의 기능들을 이용하여 정보나 일정을 조율하는 것이 팀원으로써 과제를 해결하는 데에 큰 도움이 된다.", author: "- 그림, 코딩, 오버워치의 전설" },
+      { text: "맡은 일에 책임감을 가지고 열심히 임하며 차분하고 섬세하다.", author: "- 똑부러지는 앵무새" },
+      { text: "겉바속촉 단발 권위자. 단발이셔서 시크해보이셨지만 엄청 친절하시고 귀여우세요.", author: "- 키큰 주춤이" }
+    ]
+  },
+  {
+    video: "video/199741-911047189_medium.mp4", 
+    reviews: [
+      { text: "조장으로써 각자의 의견을 하나하나 물어보고 종합시켜 결정하는 것과 의견을 내거나 정해야할 사항이 있을 때 의견을 적극적으로 내주시고 솔직하게 말씀하시는 것이 정말 좋다.", author: "- 그림, 코딩, 오버워치의 전설" },
+      { text: "다정하고 밝은 성격으로 팀플 분위기를 편하게 이끌어 주며 사람들을 세심하게 챙기는 모습이 인상 깊었다.", author: "- 단발의 권위자" },
+      { text: "성격도 시원시원하시고 팀원들의 말을 잘 수용해주셨습니다. 제가 말을 잘 못하는 편인데 질문으로 의견을 이끌어주셔서 감사했습니다!", author: "- 키큰 주춤이" }
+    ]
+  },
+  {
+    video: "video/338280_medium.mp4", 
+    reviews: [
+      { text: "자존감이 높은 편이며, 표현 능력이 좋다. ", author: "- 똑부러지는 앵무새" },
+      { text: "소심해보이시는 것과 다르게 한번 의견내실때 좋은 아이디어를 구체적으로 말씀해주셔서 반전이라고 생각했고 아이디어도 좋았습니다!", author: "- 키큰 주춤이" },
+      { text: "이야기할수록 웃긴 포인트도 많고, 그림·코딩·게임까지 두루 잘하는 다재다능한 사람이라는 생각이 들었다.", author: "- 단발의 권위자" }
+    ]
+  },
+  {
+    video: "video/2213-156227801_medium.mp4", 
+    reviews: [
+      { text: "html 작성에서 다른 사람이 보고 수정할 때 편하도록 class 이름을 쓰거나 줄바꿈 하는 것이 프로그래밍 쓰는 것에 이해도가 높은 것 같다. ", author: "- 그림, 코딩, 오버워치의 전설" },
+      { text: "인의 말을 잘 들어주고 소신이 있다. ", author: "- 똑부러지는 앵무새" },
+      { text: "백차분하고 나긋한 분위기 속에서도 한마디로 사람들을 웃게 만드는 매력이 있는 사람이다. ", author: "- 단발의 권위자" }
+    ]
+  }
+];
+
+// 스크롤 감지
+const reviewsSection = document.getElementById('reviewsSection');
+const reviewsBgVideo = document.getElementById('reviewsBgVideo');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      reviewsBgVideo.play().catch(() => {});
+      reviewsBgVideo.classList.add('active');
+    } else {
+      reviewsBgVideo.pause();
+      reviewsBgVideo.classList.remove('active');
+    }
+  });
+}, { threshold: 0.1 });
+
+observer.observe(reviewsSection);
+
+function showReview(idx) {
+  const data = REVIEWS[idx];
+  document.getElementById('review1').textContent = data.reviews[0].text;
+  document.getElementById('author1').textContent = data.reviews[0].author;
+  document.getElementById('review2').textContent = data.reviews[1].text;
+  document.getElementById('author2').textContent = data.reviews[1].author;
+  document.getElementById('review3').textContent = data.reviews[2].text;
+  document.getElementById('author3').textContent = data.reviews[2].author;
+
+  reviewsBgVideo.classList.remove('active');
+  setTimeout(() => {
+    document.getElementById('reviewsBgSource').src = data.video;
+    reviewsBgVideo.load();
+    reviewsBgVideo.play().catch(() => {});
+    reviewsBgVideo.classList.add('active');
+  }, 400);
+
+  document.querySelectorAll('.project_list li').forEach((li, i) => {
+    li.style.backgroundColor = i === idx ? '#444' : '';
+});
+}
+
+showReview(0);
+
+const CARDS = [
+  { title:"LA LA LAND",               desc:"새로운 경험을 통해 성장하는 이야기", stars:"★★★★★", score:"4.5", img:"img2/poster/poster1.png", mobileImg:"img2/poster/la-d.jpeg",      link:"popup_yw.html" },
+  { title:"REAL STEEL",               desc:"강철 주먹으로 꿈을 향해 나아가다",   stars:"★★★★☆", score:"4.0", img:"img2/poster/poster2.png", mobileImg:"img2/poster/re-d.jpeg", link:"popup_gw.html" },
+  { title:"PIRATES OF THE CARIBBEAN", desc:"바다를 지배하는 전설의 해적",        stars:"★★★★★", score:"4.5", img:"img2/poster/poster3.png", mobileImg:"img2/poster/k-d.jpeg", link:"popup_dg.html" },
+  { title:"1,000,000 YEN GIRL",       desc:"백만엔을 들고 길을 떠나다",          stars:"★★★★☆", score:"4.0", img:"img2/poster/poster4.png", mobileImg:"img2/poster/yen-d.jpeg", link:"popup_sw.html" }
+];
+
+let current = 0;
+let isAnimating = false;
+let introPlaying = true;
+const isMobile = () => window.innerWidth <= 767;
+const mod = n => ((n % CARDS.length) + CARDS.length) % CARDS.length;
+
+const mainCardBg = document.getElementById('mainCardBg');
+const mainTitle  = document.getElementById('mainTitle');
+const mainDesc   = document.getElementById('mainDesc');
+const mainStars  = document.getElementById('mainStars');
+const mainScore  = document.getElementById('mainScore');
+const detailBtn  = document.getElementById('detailBtn');
+const dotsEl     = document.getElementById('heroDots');
+const cardWrap   = document.getElementById('heroCardWrap');
+
+// 도트 생성
+CARDS.forEach((_, i) => {
+  const d = document.createElement('div');
+  d.className = 'hero-dot' + (i === 0 ? ' active' : '');
+  d.addEventListener('click', () => slideTo(i));
+  dotsEl.appendChild(d);
+});
+
+function updateDots() {
+  document.querySelectorAll('.hero-dot').forEach((d, i) =>
+    d.classList.toggle('active', i === current)
+  );
+}
+
+function applyCard(i) {
+  const c = CARDS[i];
+  mainCardBg.style.backgroundImage = `url(${isMobile() ? c.mobileImg : c.img})`;
+  mainTitle.textContent = c.title;
+  mainDesc.textContent  = c.desc;
+  mainStars.textContent = c.stars;
+  mainScore.textContent = c.score;
+  detailBtn.onclick = () => location.href = c.link;
+  updateDots();
+
+  // 오른쪽 사이드 이미지 항상 유지
+  let rightSide = cardWrap.querySelector('[data-side="right"]');
+  if (!rightSide) {
+    rightSide = document.createElement('div');
+    rightSide.dataset.side = 'right';
+    rightSide.style.cssText = `
+      position:absolute; inset:0; border-radius:32px; overflow:hidden;
+      background-size:cover; background-position:center;
+      z-index:0;
+      transform: translateX(20%) scale(0.85);
+      filter: brightness(0.4);
+    `;
+    cardWrap.appendChild(rightSide);
+
+    rightSide.style.cursor = 'pointer';
+rightSide.addEventListener('click', () => {
+  if (introPlaying) return;
+  slideTo(mod(current + 1), true);
+});
+
+  }
+  rightSide.style.backgroundImage = `url(${CARDS[mod(i + 1)].img})`;
+  document.getElementById('mainCard').style.zIndex = '5';
+}
+
+
+function slideTo(next, forceDirLeft) {
+  if (isAnimating) return;
+  next = mod(next);
+  if (next === current) return;
+  isAnimating = true;
+
+  const mc = document.getElementById('mainCard');
+
+  // ghost: 현재 중앙 카드 복사본
+  const ghost = document.createElement('div');
+  ghost.style.cssText = `
+    position:absolute; inset:0; border-radius:32px; overflow:hidden;
+    background-size:cover; background-position:center;
+    background-image:${mainCardBg.style.backgroundImage};
+    z-index:3;
+    transition: none;
+    transform: translateX(0) scale(1);
+    filter: brightness(1);
+  `;
+  cardWrap.appendChild(ghost);
+
+  // 새 카드 준비
+  current = next;
+  applyCard(current);
+
+const goRight = forceDirLeft === false;
+  mc.style.transition = 'none';
+  mc.style.transform  = `translateX(${goRight ? '-120%' : '120%'}) scale(0.85)`;
+  mc.style.filter     = 'brightness(0.4)';
+  mc.style.zIndex     = '2';
+
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+
+    // ghost: 왼쪽 120%로 나갔다가 -30%로 돌아오며 축소 + 명도 감소
+    ghost.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.6,1), filter 0.45s ease';
+    ghost.style.transform  = `translateX(${goRight ? '120%' : '-120%'}) scale(1)`;
+    ghost.style.filter     = 'brightness(1)';
+
+    setTimeout(() => {
+      ghost.style.transition = 'transform 0.4s cubic-bezier(0.4,0,0.2,1), filter 0.4s ease';
+      ghost.style.transform  = `translateX(${goRight ? '20%' : '-20%'}) scale(0.85)`;
+      ghost.style.filter     = 'brightness(0.4)';
+      ghost.style.zIndex     = '1';
+    }, 450);
+
+    // 새 카드: 오른쪽 120%에서 중앙으로 오며 커지고 명도 원본
+    setTimeout(() => {
+      mc.style.transition = 'transform 0.5s cubic-bezier(0.34,1.1,0.64,1), filter 0.5s ease';
+      mc.style.transform  = 'translateX(0) scale(1)';
+      mc.style.filter     = 'brightness(1)';
+    }, 50);
+
+// 정리
+    setTimeout(() => {
+      ghost.style.transition = 'none';
+      ghost.style.transform  = `translateX(${goRight ? '20%' : '-20%'}) scale(0.85)`;
+      ghost.style.filter     = 'brightness(0.4)';
+      ghost.style.zIndex     = '1';
+      ghost.style.cursor = 'pointer';
+      ghost.dataset.side = goRight ? 'right' : 'left';
+
+      // 같은 방향 이전 ghost 정리
+      const sideKey = goRight ? 'right' : 'left';
+      cardWrap.querySelectorAll(`[data-side="${sideKey}"]`).forEach((el, i, arr) => {
+        if (i < arr.length - 1) el.remove();
+      });
+
+      ghost.addEventListener('click', () => {
+        if (introPlaying) return;
+        if (goRight) {
+          slideTo(mod(current + 1), true);
+        } else {
+          slideTo(mod(current - 1), false);
+        }
+      });
+
+      const rightSide = cardWrap.querySelector('[data-side="right"]');
+      if (rightSide) {
+        rightSide.replaceWith(rightSide.cloneNode(true));
+        const newRight = cardWrap.querySelector('[data-side="right"]');
+        newRight.style.cursor = 'pointer';
+        newRight.addEventListener('click', () => {
+          if (introPlaying) return;
+          slideTo(mod(current + 1), true);
+        });
+      }
+
+      mc.style.zIndex = '5';
+      isAnimating = false;
+    }, 900);
+
+
+
+
+  }));  // requestAnimationFrame 닫기
+}       // slideTo 함수 닫기
+
+// 모바일: 드래그(스와이프)로 카드 전환
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.getElementById('mainCard').addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+document.getElementById('mainCard').addEventListener('touchend', (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  const diff = touchStartX - touchEndX;
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) {
+      slideTo(mod(current + 1), true);  // 왼쪽으로 스와이프 → 다음
+      } else {
+        slideTo(mod(current - 1), false);
+    }
+  }
+}, { passive: true });
+
+function playIntro() {
+  const steps = [1, 2, 3, 0];
+  let i = 0;
+  function next() {
+    if (i >= steps.length) {
+      introPlaying = false;
+      return;
+    }
+    const waitForFree = setInterval(() => {
+      if (!isAnimating) {
+        clearInterval(waitForFree);
+        slideTo(steps[i], true);
+        i++;
+        setTimeout(next, 350);
+      }
+    }, introPlaying ? 450 : 600);
+  }
+  setTimeout(next, 400);
+}
+
+// 초기화
+applyCard(0);
+playIntro();
+
+</script>
+
+</body>
+</html>
+       

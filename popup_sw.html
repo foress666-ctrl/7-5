@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="individual.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+
+    .modal-hero {
+    background-image: url("img2/poster/poster4.png"); 
+    }
+    
+    @media (max-width: 767px) {
+        .modal-hero {
+            background-image: url("img2/poster/image-d.png");
+        }
+    }
+    </style>
+
+</head>
+<body>
+    
+        <header class="modal-header padding-left padding-right">
+            <button class="back-btn" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i> 돌아가기
+            </button>
+        </header>
+
+        <section class="modal-hero padding-left padding-right">
+        </section>
+
+        <section class="stillcuts-section padding-left padding-right padding-top">
+            <div>
+                <h1 class="movie-title2 text-lg">1,000,000yen Girl</h1>
+                <p class="gray-font personal-margin text-xs">도망이 아니야! 또다른 배움의 길</p>
+             </div>
+            <div class="stillcuts-grid">
+                <div class="stillcut-item border-radius"><img src="steel/yen1.jpeg" alt="스틸컷 1"></div>
+                <div class="stillcut-item border-radius"><img src="steel/yen2.png" alt="스틸컷 2"></div>
+                <div class="stillcut-item border-radius"><img src="steel/yen3.png" alt="스틸컷 3"></div>
+                <div class="stillcut-item border-radius"><img src="steel/yen4.jpeg" alt="스틸컷 4"></div>
+            </div>
+        </section>
+
+        <section class="movie-info-section">
+            <p class="gray-font personal-margin">타나다 유키 · 2006.03.14 · 21년</p>
+            
+            <p class="movie-synopsis">
+                잘하고 좋아하는 그림그리기로 전공을 살려 고등학교에 입학했다. 서양화, 한국화, 조소, 디자인 세부 전공 선택에서 좋아하는 것보다 잘하는 서양화를 선택했지만 계속되는 불합격에 3수만큼은 피하고싶어 배우고싶었던 디자인으로 전공을 바꾸어 대학을 지원하고 합격해 입학하게된다.
+            </p>
+            
+            <p class="gray-font personal-margin">여선우</p>
+            
+            <div class="tags-and-score">
+                <span class="tag">소심</span>
+                <span class="tag">유머</span>
+                <span class="tag">내향인</span>
+            </div>
+        </section>
+
+        <div class="button-rayout">
+            <button class="ticket-btn border-radius" onclick="location.href='popup2.html'">
+                예매하기
+            </button>   
+        </div>
+
+
+</body>
+</html>
